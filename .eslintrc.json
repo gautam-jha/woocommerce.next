@@ -1,0 +1,82 @@
+{
+    "parser": "@typescript-eslint/parser", // Specifies the ESLint parser
+    "parserOptions": {
+        "ecmaVersion": 2020, // Allows for the parsing of modern ECMAScript features
+        "sourceType": "module", // Allows for the use of imports
+        "ecmaFeatures": {
+            "jsx": true // Allows for the parsing of JSX
+        }
+    },
+    "settings": {
+        "react": {
+            "version": "detect" // Tells eslint-plugin-react to automatically detect the version of React to use
+        }
+    },
+    "extends": [
+        "next",
+        "next/core-web-vitals",
+        "plugin:react/recommended", // Uses the recommended rules from @eslint-plugin-react
+        "plugin:@typescript-eslint/recommended", // Uses the recommended rules from the @typescript-eslint/eslint-plugin
+        "prettier", // Uses eslint-config-prettier to disable ESLint rules from @typescript-eslint/eslint-plugin that would conflict with prettier
+        "plugin:prettier/recommended" // Enables eslint-plugin-prettier and eslint-config-prettier. This will display prettier errors as ESLint errors. Make sure this is always the last configuration in the extends array.
+    ],
+    "rules": {
+        "@typescript-eslint/no-unused-vars": "error",
+        "@typescript-eslint/no-useless-constructor": "error",
+        "prefer-const": "error",
+        "comma-dangle": ["error", "always-multiline"],
+        "no-empty-pattern": ["off"],
+        "no-undef": ["error"],
+        "no-var": ["error"],
+        "object-curly-spacing": ["error", "always"],
+        "indent": ["off"],
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": true,
+                "semi": true
+            }
+        ],
+        "@typescript-eslint/no-explicit-any": "error",
+        "jsx-a11y/href-no-hash": ["off"],
+        "react/jsx-props-no-spreading": ["off"],
+        "react/jsx-filename-extension": ["warn", { "extensions": [".js", ".jsx", ".ts", ".tsx"] }],
+        "no-console": [
+            "error",
+            {
+                "allow": ["warn", "error"]
+            }
+        ],
+        "multiline-ternary": 0,
+        "no-unused-vars": "off",
+        "no-shadow": 0,
+        "no-useless-constructor": "off",
+        // suppress errors for missing 'import React' in files
+        "react/react-in-jsx-scope": "off",
+        "react/prop-types": 0,
+        "import/extensions": [
+            "error",
+            "ignorePackages",
+            {
+                "js": "never",
+                "jsx": "never",
+                "ts": "never",
+                "tsx": "never"
+            }
+        ],
+        "max-len": [
+            "warn",
+            {
+                "code": 100,
+                "tabWidth": 2,
+                "comments": 100,
+                "ignoreComments": false,
+                "ignoreTrailingComments": true,
+                "ignoreUrls": true,
+                "ignoreStrings": true,
+                "ignoreTemplateLiterals": true,
+                "ignoreRegExpLiterals": true
+            }
+        ]
+    }
+}
